@@ -18,11 +18,11 @@
 #
 if ($c.target.system != 'win32-msvc')
 {
-  c.libs = -pthread
+  #c.libs = -pthread
 
   lib{pthread-meta}:
   {
     #c.export.poptions = -D_REENTRANT
-    c.export.libs = -pthread
+    #c.export.libs = -pthread
   }
 }
