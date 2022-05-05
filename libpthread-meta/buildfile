@@ -1,0 +1,28 @@
+[rule_hint=c] lib{pthread-meta}:
+
+# Is -pthread *.libs or *.loptions?
+#
+# The expectation is that during linking -pthread will add the necessary
+# library(s) (if any). Whether the compiler adds them at the end (like GCC and
+# Clang) or at the point where -pthread appears is unspecified. Thus keeping
+# -pthread in *.libs is probably safer but also means we may miss out on some
+# linker command line optimizations. Also, putting it in .loptions instead of
+# .libs will result in a library being considered as recursively-binless
+# (which is likely to be ok provided the compiler adds the library(s) at the
+# end).
+#
+# Note that MinGW GCC also recognizes -pthread though the compiler may not
+# be configured with the POSIX thread support. For now we don't care about
+# such cases since C++11 <thread> is currently only supported via POSIX
+# threads.
+#
+if ($c.target.system != 'win32-msvc')
+{
+  c.libs = -pthread
+
+  lib{pthread-meta}:
+  {
+    #c.export.poptions = -D_REENTRANT
+    c.export.libs = -pthread
+  }
+}

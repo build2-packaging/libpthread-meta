@@ -1,0 +1,6 @@
+$out_root/
+{
+  include libpthread-meta/
+}
+
+export $out_root/libpthread-meta/$import.target

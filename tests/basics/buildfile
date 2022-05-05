@@ -1,0 +1,3 @@
+import libs = libpthread-meta%lib{pthread-meta}
+
+exe{driver}: c{driver} $libs
