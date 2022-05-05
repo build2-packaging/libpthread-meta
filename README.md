@@ -8,7 +8,8 @@ something you might want to use (for the recommended way of dealing with the
 
 A metadata library is a binless library also usually without any headers and
 whose only purpose is to export dependency on other, normally
-platform-specific system library or libraries. By convention, such libraries
-are name by appending `-meta` (or `_meta`, `Meta`; depending on your naming
-convention) to the original library name (it's also a good idea to check
-that such a name does not by any chance clash with anything existing).
+platform-specific system, library or libraries. By convention, such libraries
+are named by appending `-meta` (or `_meta`, `Meta`; depending on the original
+library's naming convention) to the original library name. It's also a good
+idea to check that the resulting name does not by any chance clash with
+anything existing.
