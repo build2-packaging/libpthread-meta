@@ -9,5 +9,6 @@ email: packaging@build2.org ; Mailing list.
 build-error-email: builds@build2.org
 builds: all
 build-exclude: **/**-win32-msvc* ; Not a pthread target.
+build-exclude: **/**-emscripten  ; High-touch pthread target.
 depends: * build2 >= 0.15.0-
 depends: * bpkg >= 0.15.0-
