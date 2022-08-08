@@ -9,7 +9,7 @@ library?](https://github.com/build2/HOWTO/blob/master/entries/link-pthread.md)).
 
 A metadata library is a binless library usually also without any headers and
 whose only purpose is to export dependency on other, normally
-platform-specific system, library or libraries. By convention, such libraries
+platform-specific system library or libraries. By convention, such libraries
 are named by appending `-meta` (or `_meta`, `Meta`; depending on the original
 library's naming convention) to the original library name. It's also a good
 idea to check that the resulting name does not by any chance clash with
